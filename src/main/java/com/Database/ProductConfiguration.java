@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource(value = "classpath:application.properties")
-public class ProductConnection {
+public class ProductConfiguration {
 
     @Autowired
     private Environment env;

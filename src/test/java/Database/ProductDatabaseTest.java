@@ -1,7 +1,7 @@
 package Database;
 
 import com.Application;
-import com.Database.ProductConnection;
+import com.Database.ProductConfiguration;
 import com.Database.ProductDatabase;
 import com.models.Product;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class ProductDatabaseTest {
 
     @Test
     public void getProductsByLocation_ShouldReturnProductsFromTable() {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProductConnection.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProductConfiguration.class);
         ProductDatabase database = context.getBean(ProductDatabase.class);
 
         String productLocation = "C3";
