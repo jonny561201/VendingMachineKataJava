@@ -35,12 +35,4 @@ public class ProductConfiguration {
 
         return jdbcTemplate;
     }
-
-    @Bean
-    public IProductDatabase iProductDatabase() {
-        ProductDatabase productDatabase = new ProductDatabase();
-        productDatabase.setJdbcTemplate(jdbcTemplate());
-
-        return productDatabase;
-    }
 }

@@ -18,7 +18,7 @@ import static com.models.Coin.QUARTER;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RestControllerIT {
 
     @LocalServerPort
@@ -49,11 +49,7 @@ public class RestControllerIT {
         ResponseEntity<VendProduct> response = restTemplate.postForEntity(
                 createURLWithPort("/purchaseProduct"), requestProduct, VendProduct.class);
 
-//        VendProduct response = restTemplate.postForObject(
-//                createURLWithPort("/purchaseProduct"), requestProduct, VendProduct.class);
-
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Pepsi", response.getBody().getProduct().getName());
+        assertEquals("Rolos", response.getBody().getProduct().getName());
     }
 
     private String createURLWithPort(String uri) {
