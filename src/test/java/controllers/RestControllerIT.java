@@ -49,7 +49,7 @@ public class RestControllerIT {
         ResponseEntity<VendProduct> response = restTemplate.postForEntity(
                 createURLWithPort("/purchaseProduct"), requestProduct, VendProduct.class);
 
-        assertEquals("Rolos", response.getBody().getProduct().getName());
+        assertEquals("Pepsi", response.getBody().getProduct().getName());
     }
 
     private String createURLWithPort(String uri) {

@@ -26,6 +26,6 @@ public class ProductDatabaseTest {
         List<Product> actualProducts = database.getProductsByLocation(productLocation);
 
         Product actualProduct = actualProducts.get(0);
-        assertEquals("Pepsi", actualProduct.getName());
+        assertEquals("Twix", actualProduct.getName());
     }
 }
