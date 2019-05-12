@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATABASE_VERSION="1.1"
+DATABASE_VERSION="1.3"
 
 PRESENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 WORK_DIR=`mktemp -d -p "$USERPROFILE"`
