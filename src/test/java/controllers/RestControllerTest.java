@@ -18,14 +18,13 @@ import static com.models.Coin.DOLLAR;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
 public class RestControllerTest {
 
     private VendingMachineController vendingMachineController;
     private RestController controller;
     private RequestProduct request;
-    public static final String PRODUCT_LOCATION = "A1";
-    public static final List<Coin> INSERTED_COINS = Collections.singletonList(DOLLAR);
+    private static final String PRODUCT_LOCATION = "A1";
+    private static final List<Coin> INSERTED_COINS = Collections.singletonList(DOLLAR);
 
     @Before
     public void Setup() {
