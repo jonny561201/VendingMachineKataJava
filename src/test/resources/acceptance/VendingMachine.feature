@@ -7,4 +7,4 @@ Feature: Product Queries
   Scenario: I can purchase a product
     Given The database is stocked with Starburst at B10 for $0.75
     When I purchase a product at location B10
-    Then I should return only matching items
+    Then I should successfully purchase product
