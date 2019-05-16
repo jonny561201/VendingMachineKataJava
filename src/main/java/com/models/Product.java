@@ -7,6 +7,14 @@ public class Product {
     private String name;
     private String location;
 
+    public Product() {}
+
+    public Product(String name, String location, BigDecimal cost) {
+        this.name = name;
+        this.location = location;
+        this.cost = cost;
+    }
+
     public BigDecimal getCost() {
         return cost;
     }
