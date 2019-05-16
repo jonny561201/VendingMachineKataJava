@@ -1,20 +1,24 @@
 package acceptance.steps;
 
+import controllers.RestControllerIT;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
-public class ProductDatabaseSteps {
-    @Given("^The database is stocked with items$")
-    public void theDatabaseIsStockedWithItems() {
-        System.out.println("Made it Here!!!!!!!!!!!!!!!");
+import static org.junit.Assert.assertEquals;
+
+public class ProductDatabaseSteps extends RestControllerIT {
+
+    private ResponseEntity<String> healthCheck;
+
+    @Given("^When I query the healthcheck endpoint$")
+    public void whenIQueryTheHealthCheckEndpoint() {
+        healthCheck = getHealthCheck();
     }
 
-    @When("^I query for product location (.*)$")
-    public void iQueryForProductLocationA(String productLocation) {
-    }
-
-    @Then("^I should return only matching items$")
-    public void iShouldReturnOnlyMatchingItems() {
+    @Then("^I get a success status code$")
+    public void iGetASuccessStatusCode() {
+        assertEquals(HttpStatus.OK, healthCheck.getStatusCode());
     }
 }

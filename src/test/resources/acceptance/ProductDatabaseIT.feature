@@ -1,7 +1,6 @@
 Feature: Product Queries
 
-  Scenario: I can query the products table for items by location
+  Scenario: I can get a successful healthcheck
+    Given When I query the healthcheck endpoint
+    Then I get a success status code
 
-    Given The database is stocked with items
-    When I query for product location A3
-    Then I should return only matching items

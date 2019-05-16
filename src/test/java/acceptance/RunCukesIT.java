@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/acceptance",
         glue = {"acceptance/steps", "com.foreach.cuke"},
-        snippets = SnippetType.CAMELCASE
-)
+        snippets = SnippetType.CAMELCASE)
 public class RunCukesIT {
 }
