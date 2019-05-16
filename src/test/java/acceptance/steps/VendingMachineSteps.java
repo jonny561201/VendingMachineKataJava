@@ -19,7 +19,7 @@ import static com.models.Coin.DOLLAR;
 import static com.models.Coin.QUARTER;
 import static org.junit.Assert.assertEquals;
 
-public class ProductDatabaseSteps extends RestControllerIT {
+public class VendingMachineSteps extends RestControllerIT {
 
     private ResponseEntity<String> healthCheck;
     private ResponseEntity<VendProduct> purchase;

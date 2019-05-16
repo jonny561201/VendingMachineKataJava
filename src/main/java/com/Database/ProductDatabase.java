@@ -13,6 +13,7 @@ public class ProductDatabase implements IProductDatabase{
 
     private static final String BATCH_INSERT = "INSERT into products (name, location, cost) values ";
     private static final String SELECT_PRODUCT = "SELECT * FROM products WHERE location = ?";
+    private static final String DELETE_PRODUCT = "DELETE FROM products WHERE location = ?";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -29,6 +30,10 @@ public class ProductDatabase implements IProductDatabase{
         build.replace(lastChar, lastChar + 1, ";");
 
         jdbcTemplate.update(build.toString());
+    }
+
+    public void deleteProductsByLocation(String productLocation) {
+        jdbcTemplate.update(DELETE_PRODUCT, productLocation);
     }
 
     public List<Product> getProductByType(String productType) {
