@@ -6,6 +6,7 @@ import com.models.Coin;
 import com.models.Product;
 import com.models.RequestProduct;
 import com.models.VendProduct;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -44,6 +45,12 @@ public class VendingMachineSteps {
     private ResponseEntity<String> healthCheck;
     private ResponseEntity<VendProduct> purchase;
     private String expectedProduct;
+    private String expectedLocation;
+
+    @After
+    public void tearDown() {
+        database.deleteProductsByLocation(expectedLocation);
+    }
 
     @Given("^When I query the healthCheck endpoint$")
     public void whenIQueryTheHealthCheckEndpoint() {
@@ -58,6 +65,7 @@ public class VendingMachineSteps {
     @Given("^The database is stocked with (.*) at (.*) for \\$(\\d+.\\d+)$")
     public void theDatabaseIsStockedWithItems(String productName, String location, double cost) {
         expectedProduct = productName;
+        expectedLocation = location;
         BigDecimal expectedCost = new BigDecimal(cost);
         Product product = new Product(expectedProduct, location, expectedCost);
         stockProducts(Collections.singletonList(product));
