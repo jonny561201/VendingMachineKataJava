@@ -1,8 +1,14 @@
 package com.models;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name="products")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private BigDecimal cost;
     private String name;
     private String location;
@@ -37,5 +43,13 @@ public class Product {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

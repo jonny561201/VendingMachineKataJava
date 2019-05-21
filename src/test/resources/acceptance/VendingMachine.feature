@@ -1,7 +1,7 @@
 Feature: Product Queries
 
   Scenario: I can get a successful healthCheck
-    Given When I query the healthCheck endpoint
+    When I query the healthCheck endpoint
     Then I get a success status code
 
   Scenario: I can purchase a product

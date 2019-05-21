@@ -52,7 +52,7 @@ public class VendingMachineSteps {
         database.deleteProductsByLocation(expectedLocation);
     }
 
-    @Given("^When I query the healthCheck endpoint$")
+    @When("^I query the healthCheck endpoint$")
     public void whenIQueryTheHealthCheckEndpoint() {
         healthCheck = getHealthCheck();
     }
