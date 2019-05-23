@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ProductDatabase implements IProductDatabase {
+public class ProductDatabase {
 
     private static final String BATCH_INSERT = "INSERT into products (name, location, cost) values ";
     private static final String SELECT_PRODUCT = "SELECT * FROM products WHERE location = ?";

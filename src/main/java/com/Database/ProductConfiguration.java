@@ -30,9 +30,6 @@ public class ProductConfiguration {
 
     @Bean
     public JdbcTemplate jdbcTemplate() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(datasource());
-
-        return jdbcTemplate;
+        return new JdbcTemplate(datasource());
     }
 }
