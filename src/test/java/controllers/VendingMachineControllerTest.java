@@ -22,14 +22,14 @@ public class VendingMachineControllerTest {
     private CoinService coinService;
     private ProductService productService;
     private VendingMachineController controller;
-    public static final String PRODUCT_SELECTION = "B4";
+    private static final String PRODUCT_SELECTION = "B4";
 
     @Before
     public void Setup() {
         coinService = mock(CoinService.class);
         productService = mock(ProductService.class);
         when(productService.isProductAvailable(PRODUCT_SELECTION)).thenReturn(true);
-
+        when(productService.hasSufficientFunds(any(), any())).thenReturn(true);
 
         controller = new VendingMachineController(coinService, productService);
     }
