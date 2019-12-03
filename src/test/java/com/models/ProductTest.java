@@ -14,4 +14,11 @@ public class ProductTest {
         assertEquals(BigDecimal.ZERO, actual.getCost());
     }
 
+    @Test
+    public void getCost_shouldReturnValueWhenNotNull() {
+        Product actual = new Product();
+        actual.setCost(BigDecimal.TEN);
+        assertEquals(BigDecimal.TEN, actual.getCost());
+    }
+
 }
