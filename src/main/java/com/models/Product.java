@@ -22,7 +22,8 @@ public class Product {
     }
 
     public BigDecimal getCost() {
-        return cost;
+
+        return BigDecimal.ZERO;
     }
 
     public void setCost(BigDecimal cost) {
