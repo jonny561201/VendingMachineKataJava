@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -88,6 +89,17 @@ public class ProductServiceTest {
 
         verify(mockDatabase, times(0)).getProductsByLocation(productLocation);
         assertEquals(cost, actual);
+    }
+
+    @Test
+    public void getProductCost_ShouldReturnDefaultCostOfZer() {
+        String productLocation = "A1";
+        List<Product> products = Collections.emptyList();
+        when(mockDatabase.getProductsByLocation(productLocation)).thenReturn(products);
+
+        BigDecimal actual = service.getProductCost(productLocation);
+
+        assertEquals(BigDecimal.ZERO, actual);
     }
 
     @Test

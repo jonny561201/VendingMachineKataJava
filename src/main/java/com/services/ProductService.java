@@ -29,7 +29,7 @@ public class ProductService {
         return selectedProduct != null
                 ? selectedProduct.getCost()
                 :database.getProductsByLocation(productLocation).stream()
-                    .findFirst().get()
+                    .findFirst().orElse(new Product())
                     .getCost();
     }
 
